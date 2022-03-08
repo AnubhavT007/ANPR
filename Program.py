@@ -154,7 +154,7 @@ for img in glob.glob(dir+"/Images/*.jpeg") :
     
     
     number_plate=number_plate_detection(img)
-    res2 = str("".join(re.split("[^a-zA-Z0-9]*", number_plate)))
+    res2 = str("".join(re.split("[^a-zA-Z0-9]*",str(number_plate) )))
     res2=res2.upper()
     print(res2)
 
@@ -163,26 +163,26 @@ for img in glob.glob(dir+"/Images/*.jpeg") :
 #Sorting
 array=quickSort(array,0,len(array)-1)
 print ("\n\n")
-print("The Vehicle numbers registered are:-")
+print("The Vehicle numbers Detected are:-")
 for i in array:
     print(i)
 print ("\n\n")    
 
 #Searching
-for img in glob.glob(dir+"/search/*.jpeg") :
-    img=cv2.imread(img)
+# for img in glob.glob(dir+"/search/*.jpeg") :
+#     img=cv2.imread(img)
     
-    number_plate=number_plate_detection(img)
-    res2 = str("".join(re.split("[^a-zA-Z0-9]*", number_plate)))
+#     number_plate=number_plate_detection(img)
+#     res2 = str("".join(re.split("[^a-zA-Z0-9]*", number_plate)))
 
-print("The car number to search is:- ",res2)
+# print("The car number to search is:- ",res2)
     
 
-result = binarySearch(array,0,len(array)-1,res2)
-if result != -1: 
-	print ("\n\nThe Vehicle is allowed to visit." ) 
-else: 
-    print ("\n\nThe Vehicle is  not allowed to visit.")
+# result = binarySearch(array,0,len(array)-1,res2)
+# if result != -1: 
+# 	print ("\n\nThe Vehicle is allowed to visit." ) 
+# else: 
+#     print ("\n\nThe Vehicle is  not allowed to visit.")
         
 
     			
